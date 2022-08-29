@@ -35,5 +35,6 @@
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w"
-  }
+  },
+  "version": "1.0.0"
 }
