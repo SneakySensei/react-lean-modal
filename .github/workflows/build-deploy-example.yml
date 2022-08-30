@@ -1,4 +1,4 @@
-name: Build and Deploy Example
+name: Build and Deploy Demo App
 on:
   push:
     branches:
@@ -23,13 +23,13 @@ jobs:
 
       - name: Install NPM packages
         run: |
-          npm ci
-          npm run build
+          yarn
+          yarn build
           cd example
-          npm ci
+          yarn
 
       - name: Build project
-        run: npm run build
+        run: yarn build
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
