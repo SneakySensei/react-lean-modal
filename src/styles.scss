@@ -5,6 +5,7 @@
   display: grid;
   place-items: center;
   perspective: 1000px;
+  z-index: 99999;
 
   &.enter {
     > .backdrop {
@@ -611,6 +612,7 @@
       flex: 1;
       min-height: 0;
       overflow-y: auto;
+      overscroll-behavior-y: contain;
       padding: 1rem 1.25rem;
 
       /*

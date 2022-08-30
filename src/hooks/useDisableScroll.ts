@@ -6,11 +6,27 @@ import { useEffect } from 'react';
  */
 const useDisableScroll = () => {
   useEffect(() => {
-    const previousState = document.body.style.overflow ?? 'auto';
+    const previousOverflow = document.body.style.overflow ?? 'auto';
+    const previousTouchAction = document.body.style.overflow ?? 'auto';
+    const previousOverflowScrolling =
+      document.body.style['-webkit-overflow-scrolling'] ?? 'auto';
+    const previousOverscrollBehavior =
+      document.body.style.overscrollBehavior ?? 'auto';
+
     document.body.style.overflow = 'hidden';
+    document.body.style.touchAction = 'none';
+    document.body.style['-webkit-overflow-scrolling'] = 'none';
+    document.body.style.overscrollBehavior = 'none';
+
+    // Add stable scrollbar gutter to prevent layout shift
+    document.documentElement.style.scrollbarGutter = 'stable';
 
     return () => {
-      document.body.style.overflow = previousState;
+      document.body.style.overflow = previousOverflow;
+      document.body.style.touchAction = previousTouchAction;
+      document.body.style['-webkit-overflow-scrolling'] =
+        previousOverflowScrolling;
+      document.body.style.overscrollBehavior = previousOverscrollBehavior;
     };
   }, []);
 
