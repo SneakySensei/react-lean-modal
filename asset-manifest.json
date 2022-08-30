@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.ddd3487d.css",
-    "main.js": "/static/js/main.d234ad4b.js",
-    "static/js/787.7fe084d0.chunk.js": "/static/js/787.7fe084d0.chunk.js",
-    "index.html": "/index.html",
-    "main.ddd3487d.css.map": "/static/css/main.ddd3487d.css.map",
-    "main.d234ad4b.js.map": "/static/js/main.d234ad4b.js.map",
-    "787.7fe084d0.chunk.js.map": "/static/js/787.7fe084d0.chunk.js.map"
+    "main.css": "/react-lean-modal/static/css/main.ddd3487d.css",
+    "main.js": "/react-lean-modal/static/js/main.e3c41dec.js",
+    "static/js/787.7fe084d0.chunk.js": "/react-lean-modal/static/js/787.7fe084d0.chunk.js",
+    "index.html": "/react-lean-modal/index.html",
+    "main.ddd3487d.css.map": "/react-lean-modal/static/css/main.ddd3487d.css.map",
+    "main.e3c41dec.js.map": "/react-lean-modal/static/js/main.e3c41dec.js.map",
+    "787.7fe084d0.chunk.js.map": "/react-lean-modal/static/js/787.7fe084d0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ddd3487d.css",
-    "static/js/main.d234ad4b.js"
+    "static/js/main.e3c41dec.js"
   ]
 }
