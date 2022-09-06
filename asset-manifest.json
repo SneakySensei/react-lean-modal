@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/react-lean-modal/static/css/main.ddd3487d.css",
-    "main.js": "/react-lean-modal/static/js/main.e3c41dec.js",
-    "static/js/787.7fe084d0.chunk.js": "/react-lean-modal/static/js/787.7fe084d0.chunk.js",
+    "main.css": "/react-lean-modal/static/css/main.32cab189.css",
+    "main.js": "/react-lean-modal/static/js/main.d7bea351.js",
+    "static/media/arrow-down.svg": "/react-lean-modal/static/media/arrow-down.5141951b8760537e5146046896750ba1.svg",
     "index.html": "/react-lean-modal/index.html",
-    "main.ddd3487d.css.map": "/react-lean-modal/static/css/main.ddd3487d.css.map",
-    "main.e3c41dec.js.map": "/react-lean-modal/static/js/main.e3c41dec.js.map",
-    "787.7fe084d0.chunk.js.map": "/react-lean-modal/static/js/787.7fe084d0.chunk.js.map"
+    "static/media/copy.svg": "/react-lean-modal/static/media/copy.1ae81f2fc342e17ed17168aed606ade1.svg",
+    "static/media/npm.svg": "/react-lean-modal/static/media/npm.7ea6849aad8b63b764153c69b5e47e94.svg",
+    "static/media/chevron-down.svg": "/react-lean-modal/static/media/chevron-down.d4bc5a0723cb8deef008.svg",
+    "main.32cab189.css.map": "/react-lean-modal/static/css/main.32cab189.css.map",
+    "main.d7bea351.js.map": "/react-lean-modal/static/js/main.d7bea351.js.map"
   },
   "entrypoints": [
-    "static/css/main.ddd3487d.css",
-    "static/js/main.e3c41dec.js"
+    "static/css/main.32cab189.css",
+    "static/js/main.d7bea351.js"
   ]
 }
