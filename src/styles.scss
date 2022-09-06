@@ -1,4 +1,4 @@
-.modal {
+.root {
   position: fixed;
   inset: 0;
   padding: 1rem;
@@ -568,59 +568,56 @@
       }
     }
   }
+}
 
-  > .backdrop {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: -1;
+.backdrop {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.content {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  max-height: 100%;
+  min-height: 0;
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  padding: 0.75rem 1rem;
+  background-color: #d1d5db;
+  border-radius: 0.25rem;
+}
+
+.closeButton {
+  margin-left: auto;
+  font-size: 24px;
+
+  > * {
+    display: block;
   }
+}
 
-  > .content {
-    background-color: #222222;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    max-height: 100%;
-    min-height: 0;
-    max-width: 720px;
-    display: flex;
-    flex-direction: column;
+.body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  padding: 1rem 1.25rem;
 
-    > .header {
-      display: flex;
-      padding: 0.75rem 1rem;
-      background: linear-gradient(
-        to bottom,
-        var(--gradient-blue-start),
-        var(--gradient-blue-stop)
-      );
-      border-radius: 0.25rem;
-
-      .closeButton {
-        margin-left: auto;
-        font-size: 24px;
-
-        > * {
-          display: block;
-        }
-      }
-    }
-
-    > .body {
-      flex: 1;
-      min-height: 0;
-      overflow-y: auto;
-      overscroll-behavior-y: contain;
-      padding: 1rem 1.25rem;
-
-      /*
-      You can either use overscroll-behavior: none; to disable scroll or the useDisableScroll() hook.
-			The downside of this css method is that the scroll for the main body
-			is still visible even if the modal is open and its not supported on some browsers.
-      */
-      // overscroll-behavior: none;
-    }
-  }
+  /*
+  You can either use overscroll-behavior: none; to disable scroll or the useDisableScroll() hook.
+  The downside of this css method is that the scroll for the main body
+  is still visible even if the modal is open and its not supported on some browsers.
+  */
+  // overscroll-behavior: none;
 }

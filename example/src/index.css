@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    @apply m-0;
+  }
+
+  html,
+  body {
+    @apply font-mono scroll-smooth h-full;
+  }
+
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    @apply block max-w-full;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+    @apply outline-none;
+  }
+
+  select {
+    @apply appearance-none;
+    print-color-adjust: exact;
+    background-image: url('./assets/chevron-down.svg');
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply break-words;
+  }
+
+  a {
+    @apply text-accent-dark underline font-semibold;
+  }
+
+  #root,
+  #__next {
+    @apply isolate;
+  }
+}
+
+@layer utilities {
+  .text-h1 {
+    @apply text-[2.5rem] sm:text-[3.05rem] font-semibold;
+    font-size: clamp(
+      2.5rem,
+      1.8125000000000002rem + 2.1999999999999993vw,
+      3.05rem
+    );
+  }
+
+  .text-h2 {
+    @apply text-[2rem] sm:text-[2.44375rem] font-semibold;
+    font-size: clamp(
+      2rem,
+      1.4453124999999998rem + 1.7750000000000006vw,
+      2.44375rem
+    );
+  }
+
+  .text-h3 {
+    @apply text-[1.625rem] sm:text-[1.95625rem] font-semibold;
+    font-size: clamp(1.625rem, 1.2109375rem + 1.3250000000000002vw, 1.95625rem);
+  }
+
+  .text-h4 {
+    @apply text-[1.25rem] sm:text-[1.5625rem] font-semibold;
+    font-size: clamp(1.25rem, 0.859375rem + 1.25vw, 1.5625rem);
+  }
+
+  .text-body {
+    @apply text-[0.875rem] sm:text-[1rem];
+    font-size: clamp(0.875rem, 0.71875rem + 0.5vw, 1rem);
+  }
+
+  .text-caption {
+    @apply text-[0.6875rem] sm:text-[0.75rem];
+    font-size: clamp(0.6875rem, 0.609375rem + 0.25vw, 0.75rem);
+  }
+}

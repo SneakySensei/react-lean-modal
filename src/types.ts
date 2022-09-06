@@ -1,13 +1,21 @@
-import { TRANSITIONS } from './config';
+import { ANIMATIONS } from './config';
 
-export type TransitionType = typeof TRANSITIONS[number];
+export type AnimationType = typeof ANIMATIONS[number];
 
 export type ModalProps = {
   titleElement?: React.ReactNode;
   closeIcon?: React.ReactNode;
   children: React.ReactNode;
   isOpen: boolean;
-  enterTransition?: TransitionType;
-  exitTransition?: TransitionType;
+  enterAnimation?: AnimationType;
+  exitAnimation?: AnimationType;
   onClose: () => void;
+  classNames?: {
+    root?: string;
+    backdrop?: string;
+    content?: string;
+    header?: string;
+    closeButton?: string;
+    body?: string;
+  };
 };

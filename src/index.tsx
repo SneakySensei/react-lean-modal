@@ -9,7 +9,7 @@ import { CloseIcon } from './assets/icons';
 
 import styles from './styles.scss';
 
-import { ModalProps, TransitionType } from './types';
+import { ModalProps, AnimationType } from './types';
 
 const Modal = ({
   children,
@@ -17,14 +17,24 @@ const Modal = ({
   closeIcon,
   isOpen,
   onClose,
-  enterTransition: enterAnimation = 'zoom-in',
-  exitTransition: exitAnimation = 'zoom-in',
+  enterAnimation = 'zoom-in',
+  exitAnimation = 'zoom-in',
+  classNames = {},
 }: ModalProps) => {
   const modalRef = useRef<HTMLElement>(null);
 
   const keyDownHandler: React.KeyboardEventHandler<HTMLElement> = (e) => {
     if (e.key === 'Escape') onClose();
   };
+
+  const {
+    root = '',
+    backdrop = '',
+    content = '',
+    header = '',
+    body = '',
+    closeButton = '',
+  } = classNames;
 
   return (
     <ReactPortal>
@@ -47,19 +57,34 @@ const Modal = ({
             onKeyDown={keyDownHandler}
             ref={modalRef}
             tabIndex={0}
-            className={styles.modal}
+            className={`${styles.root}${root ? ` ${root}` : ''}`}
           >
-            <div tabIndex={-1} className={styles.backdrop} onClick={onClose} />
+            <div
+              tabIndex={-1}
+              className={`${styles.backdrop}${backdrop ? ` ${backdrop}` : ''}`}
+              onClick={onClose}
+            />
 
-            <section className={styles.content}>
-              <header className={styles.header}>
+            <section
+              className={`${styles.content}${content ? ` ${content}` : ''}`}
+            >
+              <header
+                className={`${styles.header}${header ? ` ${header}` : ''}`}
+              >
                 {titleElement}
-                <button className={styles.closeButton} onClick={onClose}>
+                <button
+                  className={`${styles.closeButton}${
+                    closeButton ? ` ${closeButton}` : ''
+                  }`}
+                  onClick={onClose}
+                >
                   {closeIcon ? closeIcon : <CloseIcon />}
                 </button>
               </header>
 
-              <div className={styles.body}>{children}</div>
+              <div className={`${styles.body}${body ? ` ${body}` : ''}`}>
+                {children}
+              </div>
             </section>
           </section>
         </>
@@ -69,5 +94,5 @@ const Modal = ({
 };
 
 export default Modal;
-export { TransitionType, DisableScroll as useDisableScroll };
-export { TRANSITIONS } from './config';
+export { AnimationType, DisableScroll as useDisableScroll };
+export { ANIMATIONS } from './config';

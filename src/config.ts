@@ -1,4 +1,4 @@
-export const TRANSITIONS = [
+export const ANIMATIONS = [
   'fade',
   'fade-left',
   'fade-right',
