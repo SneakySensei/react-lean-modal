@@ -50,7 +50,7 @@ const App = () => {
                   <span className="block h-3 w-3 rounded-full bg-red-500" />
                 </header>
                 <div className="px-6 py-8 bg-black bg-opacity-80">
-                  <code className="block text-gray-500">// with npm</code>
+                  <code className="block text-gray-500">{'//'} with npm</code>
                   <code
                     onClick={() => {
                       window.navigator.clipboard.writeText(
@@ -63,7 +63,7 @@ const App = () => {
                     <CopyIcon className="text-gray-500 group-hover:opacity-100 group-active:scale-75 opacity-0 transition-all ml-4" />
                   </code>
                   <br />
-                  <code className="block text-gray-500">// with yarn</code>
+                  <code className="block text-gray-500">{'//'} with yarn</code>
                   <code
                     onClick={() => {
                       window.navigator.clipboard.writeText(
