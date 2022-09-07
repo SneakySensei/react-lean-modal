@@ -2,7 +2,7 @@
   "name": "react-lean-modal-example",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sneakysensei.github.io/react-lean-modal/",
+  "homepage": "https://react-lean-modal.snehil.dev/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",

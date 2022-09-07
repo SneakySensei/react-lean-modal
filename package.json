@@ -2,6 +2,7 @@
   "name": "react-lean-modal",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "homepage": "https://react-lean-modal.snehil.dev/",
   "repository": "https://github.com/sneakysensei/react-lean-modal",
   "author": "Snehil <snehilwebber@gmail.com>",
   "license": "MIT",
