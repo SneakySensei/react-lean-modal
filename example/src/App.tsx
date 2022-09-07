@@ -4,7 +4,7 @@ import Modal, { ANIMATIONS, AnimationType } from 'react-lean-modal';
 import { ArrowDownIcon, CopyIcon, NpmIcon } from 'assets';
 import Code from 'components/Code';
 
-const code = (enterAnimation: string, exitAnimation: string) => `<Marquee
+const code = (enterAnimation: string, exitAnimation: string) => `<Modal
   enterAnimation="${enterAnimation}"
   exitAnimation="${exitAnimation}"
   isOpen={showModal}
