@@ -32,6 +32,9 @@ jobs:
         run: |
           cd example
           yarn build
+          cd build
+          touch CNAME
+          echo "react-lean-modal.snehil.dev" >> CNAME
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
