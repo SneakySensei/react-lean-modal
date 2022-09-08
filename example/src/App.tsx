@@ -3,10 +3,16 @@ import Modal, { ANIMATIONS, AnimationType } from 'react-lean-modal';
 
 import { ArrowDownIcon, CopyIcon, NpmIcon } from 'assets';
 import Code from 'components/Code';
+import ApiTable from 'components/ApiTable';
 
-const code = (enterAnimation: string, exitAnimation: string) => `<Modal
+const code = (
+  enterAnimation: string,
+  exitAnimation: string,
+  timeout: number
+) => `<Modal
   enterAnimation="${enterAnimation}"
   exitAnimation="${exitAnimation}"
+  timeout={${timeout}}
   isOpen={showModal}
   onClose={() => setShowModal(false)}
   titleElement={<h3>Example Modal</h3>}
@@ -18,7 +24,8 @@ const App = () => {
   const [animation, setAnimation] = useState<{
     enterAnimation: AnimationType;
     exitAnimation: AnimationType;
-  }>({ enterAnimation: 'fade', exitAnimation: 'rotate-right' });
+  }>({ enterAnimation: 'fade', exitAnimation: 'fade' });
+  const [timeout, setTimeout] = useState(250);
 
   const handleOptionChange: React.ChangeEventHandler<HTMLSelectElement> = (
     event
@@ -27,6 +34,12 @@ const App = () => {
       ...state,
       [event.target.name]: event.target.value,
     }));
+  };
+
+  const handleTimeoutChange: React.ChangeEventHandler<HTMLInputElement> = (
+    event
+  ) => {
+    setTimeout(Number(event.target.value));
   };
 
   return (
@@ -139,7 +152,7 @@ const App = () => {
             <h2 className="text-h3 mb-12">
               <span className="text-accent font-bold">&gt;</span> Example
             </h2>
-            <div className="flex justify-center flex-wrap gap-x-6 gap-y-10">
+            <div className="flex justify-center items-start flex-wrap gap-x-6 gap-y-10">
               <div className="flex-1 min-w-[280px]">
                 <div className="flex gap-x-4 gap-y-6 flex-wrap">
                   <label className="block flex-1 min-w-[210px]">
@@ -173,6 +186,15 @@ const App = () => {
                     </select>
                   </label>
                 </div>
+                <label className="block mt-5">
+                  Timeout (in miliseconds)
+                  <input
+                    value={timeout}
+                    onChange={handleTimeoutChange}
+                    type="number"
+                    className="mt-3 bg-gray-50 border border-gray-300 text-inherit rounded-lg focus:ring-1 focus:ring-accent focus:border-accent block w-full p-2.5"
+                  />
+                </label>
 
                 <button
                   onClick={() => {
@@ -185,7 +207,11 @@ const App = () => {
               </div>
               <Code
                 className="block mx-auto w-1/2 min-w-[410px]"
-                code={code(animation.enterAnimation, animation.exitAnimation)}
+                code={code(
+                  animation.enterAnimation,
+                  animation.exitAnimation,
+                  timeout
+                )}
                 language="jsx"
               />
             </div>
@@ -196,96 +222,82 @@ const App = () => {
               <span className="text-accent font-bold">&gt;</span> API
             </h2>
             <div className="overflow-x-auto">
-              <table className="min-w-[680px] border-collapse border table-auto w-full">
-                <thead className="bg-gray-300">
-                  <tr>
-                    <th className="border p-1 font-semibold">Property</th>
-                    <th className="border p-1 font-semibold">Description</th>
-                    <th className="border p-1 font-semibold">Type</th>
-                    <th className="border p-1 font-semibold">Default</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="border p-1">isOpen</td>
-                    <td className="border p-1">
-                      Whether the modal is open or closed
-                    </td>
-                    <td className="border p-1">boolean</td>
-                    <td className="border p-1">false</td>
-                  </tr>
-                  <tr>
-                    <td className="border p-1">onClose</td>
-                    <td className="border p-1">
+              <ApiTable
+                headers={['Property', 'Description', 'Type', 'Default']}
+                rows={[
+                  [
+                    'isOpen',
+                    'Whether the modal is open or closed',
+                    'boolean',
+                    'false',
+                  ],
+                  [
+                    'onClose',
+                    <>
                       Function that's called when a close action is registered
                       <br />
                       This is where we set the isOpen prop to false
-                    </td>
-                    <td className="border p-1">() =&gt; void</td>
-                    <td className="border p-1">-</td>
-                  </tr>
-                  <tr>
-                    <td className="border p-1">children</td>
-                    <td className="border p-1">
-                      Content to render inside the modal's content area
-                    </td>
-                    <td className="border p-1">React.ReactNode</td>
-                    <td className="border p-1">-</td>
-                  </tr>
-                  <tr>
-                    <td className="border p-1">enterAnimation</td>
-                    <td className="border p-1">
-                      The animation to show when modal opens
-                    </td>
-                    <td className="border p-1">
-                      <a href="#AnimationType">AnimationType</a>
-                    </td>
-                    <td className="border p-1">"zoom-in"</td>
-                  </tr>
-                  <tr>
-                    <td className="border p-1">exitAnimation</td>
-                    <td className="border p-1">
-                      The animation to show when modal closes
-                    </td>
-                    <td className="border p-1">
-                      <a href="#AnimationType">AnimationType</a>
-                    </td>
-                    <td className="border p-1">"zoom-in"</td>
-                  </tr>
-                  <tr>
-                    <td className="border p-1">titleElement</td>
-                    <td className="border p-1">
-                      Content to render on the left of the modal header
-                    </td>
-                    <td className="border p-1">React.ReactNode</td>
-                    <td className="border p-1">-</td>
-                  </tr>
-                  <tr>
-                    <td className="border p-1">closeIcon</td>
-                    <td className="border p-1">
-                      Content to render inside the close button
-                    </td>
-                    <td className="border p-1">React.ReactNode</td>
-                    <td className="border p-1">Included SVG</td>
-                  </tr>
-                  <tr>
-                    <td className="border p-1">classNames</td>
-                    <td className="border p-1">
-                      Additional class names to apply to the modal
-                    </td>
-                    <td className="border p-1">
-                      <pre>
-                        {'{'}
-                        <br /> root?: string, <br /> backdrop?: string, <br />{' '}
-                        content?: string, <br /> header?: string, <br />{' '}
-                        closeButton?: string, <br /> body?: string <br />
-                        {'}'}
-                      </pre>
-                    </td>
-                    <td className="border p-1">{'{}'}</td>
-                  </tr>
-                </tbody>
-              </table>
+                    </>,
+                    '() => void',
+                    '-',
+                  ],
+                  [
+                    'children',
+                    "Content to render inside the modal's content area",
+                    'React.ReactNode',
+                    '-',
+                  ],
+                  [
+                    'enterAnimation',
+                    'The animation to show when modal opens',
+                    <a href="#AnimationType">AnimationType</a>,
+                    '"zoom-in"',
+                  ],
+                  [
+                    'exitAnimation',
+                    'The animation to show when modal closes. Behaves as the reverse of enterAnimation.',
+                    <a href="#AnimationType">AnimationType</a>,
+                    '"zoom-in"',
+                  ],
+                  [
+                    'timeout',
+                    'The duration of animations in milliseconds',
+                    'number',
+                    '250(ms)',
+                  ],
+                  [
+                    'titleElement',
+                    'Content to render on the left of the modal header',
+                    'React.ReactNode',
+                    '-',
+                  ],
+                  [
+                    'closeIcon',
+                    'Content to render inside the close button',
+                    'React.ReactNode',
+                    'Included SVG',
+                  ],
+                  [
+                    'classNames',
+                    'Additional class names to apply to the modal',
+                    <pre>
+                      {JSON.stringify(
+                        {
+                          'root?': 'string',
+                          'backdrop?': 'string',
+                          'content?': 'string',
+                          'header?': 'string',
+                          'closeButton?': 'string',
+                          'body?': 'string',
+                        },
+                        null,
+                        2
+                      ).replaceAll('"', '')}
+                    </pre>,
+                    '{}',
+                  ],
+                ]}
+              />
             </div>
             <h3 id="AnimationType" className="pt-10 text-h4 mb-6">
               <span className="text-accent">-</span> AnimationType
@@ -308,6 +320,7 @@ const App = () => {
           onClose={() => setShowModal(false)}
           titleElement={<h3>Example Modal</h3>}
           classNames={{ header: 'bg-accent-light' }}
+          timeout={timeout}
         >
           <h2 className="mb-4">Look I'm a Modal!</h2>
           <img alt="" src="https://picsum.photos/seed/a/2100/900" />

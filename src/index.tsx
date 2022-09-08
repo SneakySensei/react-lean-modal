@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { CSSProperties, useRef } from 'react';
 import CSSTransition from 'react-transition-group/CSSTransition';
 
 import ReactPortal from './components/ReactPortal';
@@ -20,6 +20,7 @@ const Modal = ({
   enterAnimation = 'zoom-in',
   exitAnimation = 'zoom-in',
   classNames = {},
+  timeout = 250,
 }: ModalProps) => {
   const modalRef = useRef<HTMLElement>(null);
 
@@ -41,7 +42,7 @@ const Modal = ({
       <CSSTransition
         in={isOpen}
         nodeRef={modalRef}
-        timeout={250}
+        timeout={timeout}
         classNames={{
           enter: [styles.enter, styles[enterAnimation]].join(' '),
           enterActive: styles.enterActive,
@@ -54,6 +55,7 @@ const Modal = ({
         <>
           <DisableScroll />
           <section
+            style={{ '--timeout': timeout } as CSSProperties}
             onKeyDown={keyDownHandler}
             ref={modalRef}
             tabIndex={0}

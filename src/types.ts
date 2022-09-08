@@ -18,4 +18,5 @@ export type ModalProps = {
     closeButton?: string;
     body?: string;
   };
+  timeout?: number;
 };

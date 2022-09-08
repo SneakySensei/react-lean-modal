@@ -16,7 +16,7 @@
   &.enterActive {
     > .backdrop {
       opacity: 1;
-      transition: opacity 250ms ease;
+      transition: opacity calc(var(--timeout) * 1ms) ease;
     }
   }
 
@@ -29,7 +29,7 @@
   &.exitActive {
     > .backdrop {
       opacity: 0;
-      transition: opacity 250ms ease;
+      transition: opacity calc(var(--timeout) * 1ms) ease;
     }
   }
 
@@ -45,7 +45,8 @@
     &.enterActive {
       > .content {
         opacity: 1;
-        transition: opacity 200ms 50ms ease;
+        transition: opacity calc(calc(var(--timeout) * 1ms) * 0.8)
+          calc(calc(var(--timeout) * 1ms) * 0.2) ease;
       }
     }
 
@@ -58,7 +59,8 @@
     &.exitActive {
       > .content {
         opacity: 0;
-        transition: opacity 200ms 50ms ease;
+        transition: opacity calc(calc(var(--timeout) * 1ms) * 0.8)
+          calc(calc(var(--timeout) * 1ms) * 0.2) ease;
       }
     }
   }
@@ -75,7 +77,8 @@
       > .content {
         transform: translate(0);
         opacity: 1;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
 
@@ -90,7 +93,8 @@
       > .content {
         transform: translateX(-10vw);
         opacity: 0;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
   }
@@ -107,7 +111,8 @@
       > .content {
         transform: translate(0);
         opacity: 1;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
 
@@ -122,7 +127,8 @@
       > .content {
         transform: translateX(10vw);
         opacity: 0;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
   }
@@ -139,7 +145,8 @@
       > .content {
         transform: translate(0);
         opacity: 1;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
 
@@ -154,7 +161,8 @@
       > .content {
         transform: translateY(-10vh);
         opacity: 0;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
   }
@@ -171,7 +179,8 @@
       > .content {
         transform: translate(0);
         opacity: 1;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
 
@@ -186,7 +195,8 @@
       > .content {
         transform: translateY(10vh);
         opacity: 0;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
   }
@@ -201,7 +211,7 @@
     &.enterActive {
       > .content {
         transform: translate(0);
-        transition: transform 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease;
       }
     }
 
@@ -214,7 +224,7 @@
     &.exitActive {
       > .content {
         transform: translateX(-100vw);
-        transition: transform 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease;
       }
     }
   }
@@ -229,7 +239,7 @@
     &.enterActive {
       > .content {
         transform: translate(0);
-        transition: transform 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease;
       }
     }
 
@@ -242,7 +252,7 @@
     &.exitActive {
       > .content {
         transform: translateX(100vw);
-        transition: transform 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease;
       }
     }
   }
@@ -257,7 +267,7 @@
     &.enterActive {
       > .content {
         transform: translate(0);
-        transition: transform 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease;
       }
     }
 
@@ -270,7 +280,7 @@
     &.exitActive {
       > .content {
         transform: translateY(-100vw);
-        transition: transform 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease;
       }
     }
   }
@@ -285,7 +295,7 @@
     &.enterActive {
       > .content {
         transform: translate(0);
-        transition: transform 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease;
       }
     }
 
@@ -298,7 +308,7 @@
     &.exitActive {
       > .content {
         transform: translateY(100vw);
-        transition: transform 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease;
       }
     }
   }
@@ -316,7 +326,8 @@
         transform: rotate(0) scale(1);
         opacity: 1;
 
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
 
@@ -331,7 +342,8 @@
       > .content {
         transform: rotate(-120deg) scale(0.5);
         opacity: 0;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
   }
@@ -349,7 +361,8 @@
         transform: rotate(0) scale(1);
         opacity: 1;
 
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
 
@@ -364,7 +377,8 @@
       > .content {
         transform: rotate(120deg) scale(0.5);
         opacity: 0;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
   }
@@ -382,7 +396,8 @@
       > .content {
         transform: rotateY(0deg);
         opacity: 1;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
 
@@ -398,7 +413,8 @@
       > .content {
         transform: rotateY(100deg);
         opacity: 0;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
   }
@@ -416,7 +432,8 @@
       > .content {
         transform: rotateY(0deg);
         opacity: 1;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
 
@@ -432,7 +449,8 @@
       > .content {
         transform: rotateY(-100deg);
         opacity: 0;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
   }
@@ -450,7 +468,8 @@
       > .content {
         transform: rotateX(0deg);
         opacity: 1;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
 
@@ -466,7 +485,8 @@
       > .content {
         transform: rotateX(-100deg);
         opacity: 0;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
   }
@@ -484,7 +504,8 @@
       > .content {
         transform: rotateX(0deg);
         opacity: 1;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
 
@@ -500,7 +521,8 @@
       > .content {
         transform: rotateX(100deg);
         opacity: 0;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
   }
@@ -517,7 +539,8 @@
       > .content {
         transform: scale(1);
         opacity: 1;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
 
@@ -532,7 +555,8 @@
       > .content {
         transform: scale(0.5);
         opacity: 0;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
   }
@@ -549,7 +573,8 @@
       > .content {
         transform: scale(1);
         opacity: 1;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
 
@@ -564,7 +589,8 @@
       > .content {
         transform: scale(1.2);
         opacity: 0;
-        transition: transform 250ms ease, opacity 250ms ease;
+        transition: transform calc(var(--timeout) * 1ms) ease,
+          opacity calc(var(--timeout) * 1ms) ease;
       }
     }
   }
